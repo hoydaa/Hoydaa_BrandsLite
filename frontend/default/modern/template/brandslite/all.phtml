@@ -1,0 +1,25 @@
+<div class="page-head">
+    <h3><?php echo $this->__('All Brands') ?></h3>
+</div>
+<div class="content">
+    <?php if ($this->hasBrandGroups()): ?>
+        <dl>
+            <?php foreach ($this->getBrandGroups() as $_letter => $_brands): ?>
+                <dt><?php echo $_letter ?></dt>
+                <dd>
+                    <ul class="bare-list">
+                        <?php foreach ($_brands as $_brand): ?>
+                            <li>
+                                <a href="<?php echo Mage::getURL() ?>catalogsearch/advanced/result/?manufacturer[]=<?php echo $_brand['value'] ?>">
+                                   <?php echo $_brand['label'] ?>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </dd>
+            <?php endforeach; ?>
+        </dl>
+    <?php else: ?>
+        <p><?php echo $this->__("Brands Aren't Available") ?></p>
+    <?php endif; ?>
+</div>

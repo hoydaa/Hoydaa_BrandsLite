@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <brandslite_index_index>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/2columns-left.phtml</template>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="brandslite/all" name="brandslite_all" template="brandslite/all.phtml" />
+        </reference>
+    </brandslite_index_index>
+</layout>

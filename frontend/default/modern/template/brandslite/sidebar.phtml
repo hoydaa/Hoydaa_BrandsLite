@@ -1,0 +1,22 @@
+<?php if ($this->hasBrands()): ?>
+    <div class="box base-mini mini-brands">
+        <div class="head">
+            <h4 class="title"><?php echo $this->__('Brands') ?></h4>
+        </div>
+        <div class="content">
+            <ol id="brand-items">
+                <?php foreach ($this->getBrands() as $_brand): ?>
+                    <li class="item">
+                        <a href="<?php Mage::getURL() ?>catalogsearch/advanced/result/?manufacturer[]=<?php echo $_brand['value'] ?>">
+                            <?php echo $_brand['label'] ?>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            </ol>
+            <script type="text/javascript">decorateList('brand-items')</script>
+            <div class="actions">
+                <a href="<?php echo $this->getUrl('brandslite') ?>"><?php echo $this->__('View All Brands') ?></a>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>

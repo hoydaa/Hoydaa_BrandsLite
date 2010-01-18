@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Hoydaa_BrandsLite>
+            <version>1.0.0</version>
+        </Hoydaa_BrandsLite>
+    </modules>
+    <global>
+        <blocks>
+            <brandslite>
+                <class>Hoydaa_BrandsLite_Block</class>
+            </brandslite>
+        </blocks>
+        <helpers>
+            <brandslite>
+                <class>Hoydaa_BrandsLite_Helper</class>
+            </brandslite>
+        </helpers>
+    </global>
+    <frontend>
+        <routers>
+            <brandslite>
+                <use>standard</use>
+                <args>
+                    <module>Hoydaa_BrandsLite</module>
+                    <frontName>brands</frontName>
+                </args>
+            </brandslite>
+        </routers>
+        <layout>
+            <updates>
+                <brandslite module="Hoydaa_BrandsLite">
+                    <file>brandslite.xml</file>
+                </brandslite>
+            </updates>
+        </layout>
+    </frontend>
+</config>
