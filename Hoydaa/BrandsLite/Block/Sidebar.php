@@ -11,7 +11,13 @@ class Hoydaa_BrandsLite_Block_Sidebar extends Mage_Core_Block_Template {
     }
 
     public function setRandom($random) {
-        $this->_random = $random;
+        if (strcasecmp($random, 'true') == 0) {
+            $this->_random = true;
+        } else if (strcasecmp($random, 'false') == 0) {
+            $this->_random = false;
+        } else {
+            throw new Exception;
+        }
     }
 
     public function hasBrands() {
@@ -39,7 +45,7 @@ class Hoydaa_BrandsLite_Block_Sidebar extends Mage_Core_Block_Template {
         $diff = $count - $num;
 
         if (!$random) {
-            $keys = array_slice(array_keys($array), $count - 1, $diff, true);
+            $keys = array_slice(array_keys($array), $num, $diff, true);
         } else if ($diff == 1) {
             $keys = array(array_rand($array, $diff));
         } else {
